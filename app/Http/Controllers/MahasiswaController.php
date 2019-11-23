@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
+use App\Student;
 
 class MahasiswaController extends Controller
 {
@@ -16,8 +17,9 @@ class MahasiswaController extends Controller
     public function index()
     {
         // echo "aku ganteng kan";
-        $students = DB::table('mahasiswa')->get();
-
+        // cara query builder
+        // $students = DB::table('students')->get();
+        $students = Student::All();
         // dump == var_dump
         // dump($students);
         // die;
@@ -25,7 +27,9 @@ class MahasiswaController extends Controller
         // alternatif diatas
         // dd($students);
         // phpinfo();
-        return view('mahasiswa.index', ['students' => $students]);
+        // return view('mahasiswa.index', ['students' => $students]);
+        // alternatif lainnya
+        return view('mahasiswa.index', compact('students'));
     }
 
     /**

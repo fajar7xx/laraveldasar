@@ -30,6 +30,9 @@
 Route::get('/', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
 Route::get('/mahasiswa', 'MahasiswaController@index');
-// Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');
+// student
+Route::get('/students', 'StudentsController@index');
+Route::post('/students', 'StudentsController@store');
+Route::get('/students/create', 'StudentsController@create');
+Route::get('/students/{student}', 'StudentsController@show');
