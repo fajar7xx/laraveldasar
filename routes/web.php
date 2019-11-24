@@ -32,7 +32,13 @@ Route::get('/about', 'PagesController@about');
 Route::get('/mahasiswa', 'MahasiswaController@index');
 
 // student
-Route::get('/students', 'StudentsController@index');
-Route::post('/students', 'StudentsController@store');
-Route::get('/students/create', 'StudentsController@create');
-Route::get('/students/{student}', 'StudentsController@show');
+// Route::get('/students', 'StudentsController@index');
+// Route::post('/students', 'StudentsController@store');
+// Route::get('/students/create', 'StudentsController@create');
+// Route::get('/students/{student}', 'StudentsController@show');
+// Route::delete('/students/{student}', 'StudentsController@destroy');
+// Route::get('/students/{student}/edit', 'StudentsController@edit');
+// Route::patch('/students/{student}', 'StudentsController@update');
+
+// magic buat semua route denan satu perinta ini aja
+Route::resource('students', 'StudentsController');

@@ -2,4 +2,16 @@ data video yang telah di totnotn :
     ✔ ngobar 17 @done (11/22/2019, 5:05:08 PM)
     ✔ ngobar 18 menit 43:30 @done (11/23/2019, 10:40:50 AM)
     ✔ ngobar 19 @done (11/23/2019, 3:11:28 PM)
-    ☐ ngobar 20
+    ☐ ngobar 20 14:49*
+
+
+perintah artisan :
+    membuat controller sekaligus modelnya 
+    ☐ php artisan make:controller JurusanController -r -m Jurusan
+
+    migrasi database yang di buat
+    migrasi untuk melakukan perubahan struktur daabase
+    ☐ php artisan migrate
+
+    php artisan make:migration add_soft_delete_to_students
+    membuat tambahan field pada table students dengan migrasi

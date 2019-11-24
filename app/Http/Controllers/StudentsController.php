@@ -99,7 +99,8 @@ class StudentsController extends Controller
      */
     public function edit(Student $student)
     {
-        //
+        // return $student;
+        return view('students.edit', compact('student'));
     }
 
     /**
@@ -111,7 +112,24 @@ class StudentsController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        //
+        // return  $request;
+
+        $request->validate([
+            'nama' => 'required',
+            'nim' => 'required|size:10',
+            'email' => 'required',
+            'jurusan' => 'required'
+        ]);
+
+        Student::where('id', $student->id)
+            ->update([
+                'nama' => $request->nama,
+                'nim' => $request->nim,
+                'email' => $request->email,
+                'jurusan' => $request->jurusan,
+            ]);
+
+        return redirect('/students')->with('status', 'Data Has Been Updated!');
     }
 
     /**
@@ -122,6 +140,11 @@ class StudentsController extends Controller
      */
     public function destroy(Student $student)
     {
-        //
+        // return $student;
+        Student::destroy($student->id);
+        return redirect('/students')->with('status', 'Data Has Been Deleted!');
+
+        // gunakan cara soft delete ketiak data ingin di hapus dari user 
+        // tapi di database masih ada
     }
 }

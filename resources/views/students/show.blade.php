@@ -15,8 +15,13 @@
                     <p class="card-text">{{$student->email}}</p>
                     <p class="card-text">{{$student->jurusan}}</p>
 
-                    <button class="btn btn-primary" type="submit">Edit</button>
-                    <button class="btn btn-danger" type="submit">Delete</button>
+                    <a class="btn btn-primary" href="{{$student->id}}/edit">Edit</a>
+                    {{-- menghapus file mnggunkan method delete --}}
+                    <form action="{{$student->id}}" method="post" class="d-inline">
+                        @method('delete')
+                        @csrf
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                    </form>
                     <a href="/students" class="text-warning float-right">Kembali</a>
                 </div>
             </div>
